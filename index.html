@@ -1,133 +1,154 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agenda Semanal de Lives</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agenda Semanal - Cindyplay</title>
   <style>
     :root {
-      --bg1: #1a0027;
-      --bg2: #3d005a;
-      --accent: #ff69b4;
-      --card: #ffffff11;
-      --glass: #ffffff08;
-      --glass-strong: #ffffff18;
-      font-family: 'Poppins', system-ui, sans-serif;
+      --accent: #7a49ff;
+      --bg-dark: #0c0013;
+      --card-bg: #2a0040;
+      font-family: 'Poppins', sans-serif;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 80%);
+      background: url('tt.jpg') center/cover fixed no-repeat;
+      background-color: var(--bg-dark);
       color: #fff;
-      -webkit-font-smoothing: antialiased;
-      padding: 36px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
+
+    /* ===== CABEÇALHO ===== */
     header {
-      text-align: center;
-      margin-bottom: 40px;
+      width: 100%;
+      height: 220px;
+      background: url('https://i.imgur.com/Z5fjvr6.png') center/cover no-repeat;
+      box-shadow: none;
+      border: none;
     }
-    h1 {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    p.lead {
-      font-size: 1rem;
-      color: #fcdfff;
-      opacity: 0.9;
-    }
+
+    /* ===== CONTEÚDO ===== */
     main {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
       width: 100%;
       max-width: 1100px;
+      padding: 40px 20px;
     }
+
     .day-card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-      border-radius: 14px;
+      background: var(--card-bg);
+      border-radius: 16px;
       padding: 16px;
-      border: 1px solid var(--glass-strong);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s;
+      gap: 14px;
+      transition: transform .3s;
     }
-    .day-card:hover {
-      transform: translateY(-6px);
-    }
+
+    .day-card:hover { transform: translateY(-5px); }
+
     .day-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 6px;
     }
+
     .weekday {
       font-weight: 700;
       font-size: 1.1rem;
-      color: var(--accent);
+      color: #ff80e5;
+      text-transform: uppercase;
     }
+
+    /* === TAG DE LIVE (SEM FUNDO ROSA) === */
+    .live-tag {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: transparent;
+      box-shadow: none;
+    }
+
     .posters {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 8px;
     }
+
     .poster {
       flex: 1;
       min-width: 120px;
       max-width: 220px;
-      background: var(--card);
+      background: #150021;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
+
     .poster img {
       width: 100%;
       height: 300px;
       object-fit: cover;
       display: block;
     }
+
     .meta {
       padding: 8px;
       text-align: center;
     }
+
     .title-p {
       font-weight: 700;
       font-size: 0.95rem;
       color: #fff;
     }
-    .sub {
-      font-size: 0.8rem;
-      opacity: 0.85;
-    }
+
     footer {
       margin-top: 40px;
       text-align: center;
       font-size: 0.9rem;
       color: #ffe6f3;
-      opacity: 0.8;
+      opacity: 0.85;
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: 700px) {
+      header { height: 160px; }
+    }
+
+    @media (max-width: 420px) {
+      .poster img { height: 220px; }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Agenda Semanal de Lives</h1>
-    <p class="lead">Confira os GLs que vou assistir essa semana.</p>
-  </header>
+  <header></header>
 
   <main>
+    <!-- Segunda-feira -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Segunda-feira</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -141,9 +162,11 @@
       </div>
     </article>
 
+    <!-- Quarta-feira -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Quarta-feira</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -157,9 +180,11 @@
       </div>
     </article>
 
+    <!-- Quinta-feira -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Quinta-feira</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -173,9 +198,11 @@
       </div>
     </article>
 
+    <!-- Sexta-feira -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Sexta-feira</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -189,9 +216,11 @@
       </div>
     </article>
 
+    <!-- Sábado -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Sábado</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -201,9 +230,11 @@
       </div>
     </article>
 
+    <!-- Domingo -->
     <article class="day-card">
       <div class="day-header">
         <div class="weekday">Domingo</div>
+        <div class="live-tag">Live às 18h</div>
       </div>
       <div class="posters">
         <div class="poster">
@@ -219,7 +250,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Agenda de assistir os GLs da Cindyplay.</p>
+    <p>© 2025 Agenda GL da Cindyplay.</p>
   </footer>
 </body>
 </html>
